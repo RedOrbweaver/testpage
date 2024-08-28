@@ -6,7 +6,7 @@ import sys
 import io
 
 hostName = "localhost" if len(sys.argv) <= 1 else sys.argv[1]
-serverPort = 8081 if len(sys.argv) <= 2 else sys.argv[2]
+serverPort = 8081 if len(sys.argv) <= 2 else int(sys.argv[2])
 
 headers = []
 quotes = [] 
