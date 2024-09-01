@@ -4,9 +4,16 @@ import time
 import random
 import sys
 import io
+import os
+
+if (len(sys.argv) >= 2 and (sys.argv[1] == "--help" or sys.argv[1] == "-h" or sys.argv[1] == "help")):
+    print("server.py/testserver.py [hostname] [port] [directory]")
+    exit(0)
 
 hostName = "localhost" if len(sys.argv) <= 1 else sys.argv[1]
 serverPort = 8081 if len(sys.argv) <= 2 else int(sys.argv[2])
+if (len(sys.argv) >= 4):
+    os.chdir(sys.argv[3])
 
 headers = []
 quotes = [] 
